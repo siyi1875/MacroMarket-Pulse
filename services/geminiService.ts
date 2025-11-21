@@ -1,15 +1,18 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { InsightResponse, DataPoint } from '../types';
 
-const getClient = () => {
-    let apiKey;
-    try {
-        // Safely attempt to access process.env
-        // In some browser builds, 'process' is not defined, causing a crash
-        apiKey = process.env.API_KEY;
-    } catch (e) {
-        console.warn("Environment variable access failed. AI features disabled.");
-        return null;
+const getClient = (userKey?: string) => {
+    let apiKey = userKey;
+    
+    // If no user key provided, try the environment variable
+    if (!apiKey) {
+        try {
+            if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
+                apiKey = process.env.API_KEY;
+            }
+        } catch (e) {
+            // Ignore env errors
+        }
     }
     
     if (!apiKey) return null;
@@ -20,13 +23,15 @@ export const generateMarketInsight = async (
   selectedMacros: string[],
   selectedAssets: string[],
   timeRange: string,
-  dataSummary: Partial<DataPoint>[]
+  dataSummary: Partial<DataPoint>[],
+  userApiKey?: string // Accept optional user key
 ): Promise<InsightResponse> => {
-  const ai = getClient();
+  const ai = getClient(userApiKey);
+  
   if (!ai) {
     return {
-      title: "API Key Configuration",
-      content: "To see AI insights, please ensure your environment is configured with a valid API_KEY. If you are deploying this, check your provider's settings (e.g., Vercel Environment Variables).",
+      title: "API Key Missing",
+      content: "Please enter your Gemini API key to generate insights.",
       keyTakeaway: "Setup required."
     };
   }
@@ -74,9 +79,9 @@ export const generateMarketInsight = async (
   } catch (error) {
     console.error("Gemini Error:", error);
     return {
-      title: "Analysis Unavailable",
-      content: "We couldn't generate an insight at this moment. The markets are complex!",
-      keyTakeaway: "Try changing your filters."
+      title: "Analysis Failed",
+      content: "We couldn't generate an insight at this moment. Please check your API key or try again later.",
+      keyTakeaway: "API Error"
     };
   }
 };
