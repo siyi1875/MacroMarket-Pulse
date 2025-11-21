@@ -2,7 +2,16 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { InsightResponse, DataPoint } from '../types';
 
 const getClient = () => {
-    const apiKey = process.env.API_KEY;
+    let apiKey;
+    try {
+        // Safely attempt to access process.env
+        // In some browser builds, 'process' is not defined, causing a crash
+        apiKey = process.env.API_KEY;
+    } catch (e) {
+        console.warn("Environment variable access failed. AI features disabled.");
+        return null;
+    }
+    
     if (!apiKey) return null;
     return new GoogleGenAI({ apiKey });
 };
@@ -16,9 +25,9 @@ export const generateMarketInsight = async (
   const ai = getClient();
   if (!ai) {
     return {
-      title: "API Key Missing",
-      content: "Please configure your Gemini API key to receive AI-powered market insights.",
-      keyTakeaway: "No data available."
+      title: "API Key Configuration",
+      content: "To see AI insights, please ensure your environment is configured with a valid API_KEY. If you are deploying this, check your provider's settings (e.g., Vercel Environment Variables).",
+      keyTakeaway: "Setup required."
     };
   }
 
