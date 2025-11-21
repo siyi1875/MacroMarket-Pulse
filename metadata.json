@@ -1,0 +1,5 @@
+{
+  "name": "MacroMarket Pulse",
+  "description": "An interactive dashboard visualizing the correlation between US macroeconomic factors (CPI, Rates, M2) and Stock/Crypto market performance, featuring AI-powered insights.",
+  "requestFramePermissions": []
+}
