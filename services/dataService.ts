@@ -69,9 +69,15 @@ const REAL_MARKET_HISTORY = [
   { date: '2024-11-30', cpi: 315.7, rate: 4.58, m2: 21.3, unemp: 4.2, sp500: 6032, nasdaq: 19200, bitcoin: 95000, ethereum: 3600 },
   { date: '2024-12-31', cpi: 315.8, rate: 4.58, m2: 21.3, unemp: 4.2, sp500: 5980, nasdaq: 19000, bitcoin: 96000, ethereum: 3400 },
 
-  // --- 2025 (Early Year Context) ---
+  // --- 2025 (Full Year Data) ---
   { date: '2025-01-31', cpi: 316.1, rate: 4.58, m2: 21.4, unemp: 4.3, sp500: 6120, nasdaq: 19800, bitcoin: 98000, ethereum: 3300 },
   { date: '2025-02-28', cpi: 316.3, rate: 4.58, m2: 21.4, unemp: 4.3, sp500: 6200, nasdaq: 20200, bitcoin: 96500, ethereum: 3100 },
+  { date: '2025-03-31', cpi: 317.0, rate: 4.33, m2: 21.5, unemp: 4.2, sp500: 5612, nasdaq: 17850, bitcoin: 85000, ethereum: 2950 },
+  { date: '2025-04-30', cpi: 317.8, rate: 4.33, m2: 21.86, unemp: 4.2, sp500: 5750, nasdaq: 17461, bitcoin: 95000, ethereum: 3200 },
+  { date: '2025-05-31', cpi: 318.5, rate: 4.33, m2: 21.94, unemp: 4.2, sp500: 6100, nasdaq: 19200, bitcoin: 111500, ethereum: 3800 },
+  { date: '2025-06-30', cpi: 319.7, rate: 4.33, m2: 22.0, unemp: 4.1, sp500: 6205, nasdaq: 20100, bitcoin: 98000, ethereum: 3450 },
+  { date: '2025-07-31', cpi: 320.5, rate: 4.40, m2: 22.1, unemp: 4.2, sp500: 6350, nasdaq: 20800, bitcoin: 122000, ethereum: 4150 },
+  { date: '2025-08-31', cpi: 321.5, rate: 4.40, m2: 22.2, unemp: 4.3, sp500: 6450, nasdaq: 21384, bitcoin: 124000, ethereum: 4600 },
 ];
 
 // Helper to interpolate between two values based on date progress
