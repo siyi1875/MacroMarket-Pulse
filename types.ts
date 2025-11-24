@@ -12,6 +12,7 @@ export interface DataPoint {
   nasdaq: number;
   bitcoin: number;
   ethereum: number;
+  gold: number;
   [key: string]: number | string;
 }
 

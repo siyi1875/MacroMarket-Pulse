@@ -66,13 +66,22 @@ export const METRICS: MetricConfig[] = [
     isLeftAxis: false,
     description: "The original cryptocurrency. Digital gold."
   },
-  { 
-    id: 'ethereum', 
-    label: 'Ethereum', 
-    type: MetricType.ASSET, 
-    color: '#8b5cf6', 
-    unit: '$', 
+  {
+    id: 'ethereum',
+    label: 'Ethereum',
+    type: MetricType.ASSET,
+    color: '#8b5cf6',
+    unit: '$',
     isLeftAxis: false,
     description: "Smart contract blockchain platform. Highly volatile."
+  },
+  {
+    id: 'gold',
+    label: 'Gold',
+    type: MetricType.ASSET,
+    color: '#fbbf24',
+    unit: '$',
+    isLeftAxis: false,
+    description: "Traditional safe-haven asset. Often rises when markets are uncertain."
   },
 ];
