@@ -11,23 +11,23 @@ export const METRICS: MetricConfig[] = [
     isLeftAxis: true,
     description: "The interest rate banks charge each other. Higher rates often cool down markets." 
   },
-  { 
-    id: 'cpi', 
-    label: 'CPI (Inflation)', 
-    type: MetricType.MACRO, 
-    color: '#f97316', 
-    unit: 'Idx', 
+  {
+    id: 'cpi',
+    label: 'CPI (Inflation)',
+    type: MetricType.MACRO,
+    color: '#ec4899',
+    unit: 'Idx',
     isLeftAxis: true,
     description: "Consumer Price Index. Measures inflation. High inflation hurts purchasing power."
   },
-  { 
-    id: 'unemployment', 
-    label: 'Unemployment Rate', 
-    type: MetricType.MACRO, 
-    color: '#eab308', 
-    unit: '%', 
+  {
+    id: 'unemployment',
+    label: 'Unemployment Rate',
+    type: MetricType.MACRO,
+    color: '#14b8a6',
+    unit: '%',
     isLeftAxis: true,
-    description: "Percentage of labor force without jobs. Can indicate economic health." 
+    description: "Percentage of labor force without jobs. Can indicate economic health."
   },
   { 
     id: 'm2', 
@@ -57,12 +57,12 @@ export const METRICS: MetricConfig[] = [
     isLeftAxis: false,
     description: "Tech-heavy stock index. More sensitive to interest rates."
   },
-  { 
-    id: 'bitcoin', 
-    label: 'Bitcoin', 
-    type: MetricType.ASSET, 
-    color: '#f59e0b', 
-    unit: '$', 
+  {
+    id: 'bitcoin',
+    label: 'Bitcoin',
+    type: MetricType.ASSET,
+    color: '#f97316',
+    unit: '$',
     isLeftAxis: false,
     description: "The original cryptocurrency. Digital gold."
   },
